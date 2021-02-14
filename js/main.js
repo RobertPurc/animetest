@@ -6,6 +6,8 @@ const showmenu = document
     const nav = document.querySelector(".navigation__nav");
     nav.classList.toggle("show_menu");
 
+    console.log("halo");
+
     const btn = document.querySelector(".menu__btn");
     btn.classList.toggle("burger");
   });
@@ -22,7 +24,6 @@ const showLogin = document
         const logInBtn = document.querySelector(".login__span");
         logInBtn.classList.toggle("login--close");
       } else {
-        console.log("kurwa");
       }
     }
 
