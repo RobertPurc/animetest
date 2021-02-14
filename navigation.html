@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Strefa Anime</title>
+  </head>
+  <body>
+    <header class="navigation">
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="/strona-główna.html" class="navigation__link"
+              >Strona Główna</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="/przeglądaj-anime.html" class="navigation__link"
+              >Przeglądaj Anime</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a
+              href="/zarejstruj.html"
+              class="navigation__link navigation__register"
+              >Zarejstruj się</a
+            >
+          </li>
+          <li id="login" class="navigation__item">
+            <a href="/zaloguj.html" class="navigation__link"
+              >Zaloguj się <span class="login__span">X</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="menu">
+        <a href="/stronagłówna.html"
+          ><img
+            class="menu__logo"
+            src="./img/strefa-anime-logo.png"
+            alt="strefa-anime-logo"
+          />
+        </a>
+        <button href="/zaloguj.html" class="menu__btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="login">
+        <form action="#" method="POST" class="login__form">
+          <div class="login__container">
+            <label for="login">Login</label>
+            <input type="text" placeholder="Wpisz swój login" />
+          </div>
+
+          <div class="login__container">
+            <label for="login">hasło</label>
+            <input type="text" placeholder="Wpisz swoje hasło" />
+          </div>
+
+          <div class="login__container login__btn">
+            <input type="submit" value="Zaloguj się" />
+          </div>
+
+          <button class="login__close">
+            <span></span>
+            <span></span>
+          </button>
+        </form>
+      </div>
+    </header>
+  </body>
+
+  <script src="/js/main.js"></script>
+</html>

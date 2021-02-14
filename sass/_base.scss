@@ -1,0 +1,30 @@
+$bp-1200px: 75em; //1200px
+$bp-1000px: 62.5em; //1000px
+$bp-800px: 50em; //800px
+$bp-600px: 37.5em; //600px
+
+$bgi: linear-gradient(#2eadd3, #2e96d3);
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //1rem = 10px
+  font-family: "Roboto", sans-serif;
+
+  @media screen and (max-width: $bp-1000px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background-color: #222;
+
+  overflow: hidden;
+}

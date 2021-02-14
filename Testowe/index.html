@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="navigation" id="navbar">
+      <a class="logo" href="<?php echo site_url(''); ?>"
+        ><img
+          class="navigation__logo"
+          src="<?php echo get_template_directory_uri();?>/img/strefa-anime-min.png"
+          alt="Moje-anime-logo"
+      /></a>
+      <nav class="navigation__nav">
+        <ul class="navigation__list">
+          <li class="navigation__item">
+            <a href="<?php echo site_url(''); ?>" class="navigation__link"
+              >Strona główna</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="<?php echo site_url('/'); ?>" class="navigation__link"
+              >Blog</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="<?php echo site_url('/anime'); ?>" class="navigation__link"
+              >Anime</a
+            >
+          </li>
+        </ul>
+        <!-- <button class="register__btn btn">
+        Zarejestruj
+      </button>
+      <button class="login__btn btn">
+        Zaloguj
+      </button> -->
+      </nav>
+      <button class="menu" aria-label="Menu">
+        <span class="menu__span"></span>
+      </button>
+    </div>
+
+    <body>
+      <main class="container--player">
+        <header class="container__player">
+          <a href="<?php echo site_url('/anime'); ?>" class="anime--back"
+            ><span>&larr;</span> Powrót do anime</a
+          >
+          <p class="translation">
+            Tłumaczenie by:
+            <a href=" <?php the_field('link_do_socialu'); ?>" target="_blank">
+              autor_tlumaczenia')
+            </a>
+          </p>
+          <div class="player">
+            <iframe
+              id="player"
+              frameborder="0"
+              style="border: none"
+              scrolling="no"
+              allowfullscreen
+              name="v2"
+            >
+            </iframe>
+          </div>
+          <div class="sezon__container">
+            <ul class="seasons">
+              <li class="season">
+                <p class="season__title">numer_sezonu</p>
+                <ul class="episodes">
+                  <li class="episode">
+                    <p class="episode__title">odcinek_nume></p>
+                    <p class="episode__link">
+                      https://ebd.cda.pl/620x368/595346326
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </header>
+      </main>
+
+      <section class="anime__description" id="anime-des">
+        <h1 class="anime__description__titile"><span>nazwa_anime</span></h1>
+
+        <div class="anime__description__container">
+          <figure class="anime__description__figure">
+            <img
+              src="<?php the_field('anime_img') ?>"
+              alt="<?php the_field('nazwa_anime'); ?>"
+              class="anime__description__img"
+            />
+          </figure>
+          <article class="anime__description__article">
+            <div class="anime__description__details">
+              <p>Score rating</p>
+              <p>Gatunki:</p>
+            </div>
+            <span class="anime__description__content">opis_anime</span>
+          </article>
+        </div>
+      </section>
+      <script>
+        function seazons() {
+          const season = document.querySelectorAll(".season__title");
+
+          function toggleOpen() {
+            this.classList.toggle("open");
+          }
+
+          season.forEach((odcinki) =>
+            odcinki.addEventListener("click", toggleOpen)
+          );
+        }
+
+        seazons();
+
+        ///
+
+        function episodes() {
+          const epiTitle = document.querySelectorAll(".episode__title");
+          const linkArray = Array.from(epiTitle);
+          const player = document.getElementById("player");
+
+          let framesArray = [];
+
+          function change() {
+            const clone = this.nextElementSibling.cloneNode(true);
+            const clearLinkFromP = clone.textContent;
+            console.log(clone.textContent);
+            //klonuje link/player
+            const insertInPlayer = (player.src = `${clearLinkFromP}`);
+            // const move = player.appendChild(clone);
+
+            //przenosi do playera
+            //początkowo element wyżej jest null dlatego jeśli jakić się pojawi to usuwam go clasą
+            // if (player.src) {
+            // move.previousElementSibling.remove();
+            // move.style.display = "block";
+            // }
+          }
+          //iteruje wszystkie tytuły i daje im klika
+          epiTitle.forEach((odcinki) =>
+            odcinki.addEventListener("click", change)
+          );
+        }
+        episodes();
+
+        function currentClick() {
+          const allTitles = document.querySelectorAll(".episode");
+          let titlesWithBorder = [];
+
+          function change() {
+            const added = this;
+            // console.log(added);
+            titlesWithBorder.push(this);
+            console.log(titlesWithBorder);
+            titlesWithBorder[0].classList.add("border");
+            if (titlesWithBorder.length > 1) {
+              titlesWithBorder.forEach(function (el) {
+                el.classList.toggle("border");
+              });
+              titlesWithBorder.shift();
+            }
+
+            setTimeout(() => {
+              const iframev = document.getElementById("player");
+
+              const icon = iframev.contentWindow.document.querySelector(
+                ".pb-play-ico"
+              );
+              console.log(icon);
+            }, 5000);
+          }
+          allTitles.forEach((listTitle) =>
+            listTitle.addEventListener("click", change)
+          );
+        }
+        currentClick();
+      </script>
+    </body>
+  </body>
+</html>
