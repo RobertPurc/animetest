@@ -52,7 +52,7 @@
     color: white;
     padding: 1rem;
     @media screen and (max-width: $bp-1000px) {
-      font-size: 3rem;
+      // font-size: 3rem;
     }
 
     span {
@@ -78,6 +78,10 @@
     left: 0;
     margin-top: 1.2rem;
     margin-left: 2.8rem;
+
+    @media screen and (max-width: $bp-800px) {
+      width: 10rem;
+    }
   }
 
   &__btn {
@@ -120,8 +124,6 @@
         opacity: 1;
       }
 
-      div:nth-child(2) {
-      }
       div:nth-child(3) {
         width: 7rem;
         transform: translateY(-25px);
@@ -194,8 +196,8 @@
     @media screen and (max-width: $bp-1000px) {
       flex-direction: column;
       background-color: #222;
-      width: 50%;
-      height: 60%;
+      width: 60%;
+      height: 80%;
     }
 
     @media screen and (max-width: $bp-800px) {
@@ -284,22 +286,22 @@
       display: block;
       position: absolute;
       right: 50%;
-      top: 30px;
+      bottom: 50px;
       display: flex;
       flex-direction: column;
       background-color: transparent;
       border: none;
-      transform: translate(50%, 50%);
+      transform: translate(30%, -50%);
       width: 6rem;
 
       outline: none;
 
       cursor: pointer;
       :nth-child(1) {
-        transform: rotate(45deg) translate(16px, 0px);
+        transform: rotate(45deg) translate(15px, 0px);
       }
       :nth-child(2) {
-        transform: rotate(-45deg) translate(16px, 0px);
+        transform: rotate(-45deg) translate(15px, 0px);
       }
       div {
         width: 100%;
@@ -312,6 +314,12 @@
 
         // translate: ;
       }
+    }
+
+    @media (max-width: $bp-800px) and (orientation: landscape) {
+      left: 20px;
+      top: 60%;
+      transform: translate(50%, -50%);
     }
   }
 

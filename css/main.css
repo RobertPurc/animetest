@@ -98,12 +98,6 @@ body {
   padding: 1rem;
 }
 
-@media screen and (max-width: 62.5em) {
-  .navigation__link {
-    font-size: 3rem;
-  }
-}
-
 .navigation__link span {
   display: none;
 }
@@ -128,6 +122,12 @@ body {
   left: 0;
   margin-top: 1.2rem;
   margin-left: 2.8rem;
+}
+
+@media screen and (max-width: 50em) {
+  .menu__logo {
+    width: 10rem;
+  }
 }
 
 .menu__btn {
@@ -279,8 +279,8 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
     background-color: #222;
-    width: 50%;
-    height: 60%;
+    width: 60%;
+    height: 80%;
   }
 }
 
@@ -397,7 +397,7 @@ body {
     display: block;
     position: absolute;
     right: 50%;
-    top: 30px;
+    bottom: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -407,19 +407,19 @@ body {
             flex-direction: column;
     background-color: transparent;
     border: none;
-    -webkit-transform: translate(50%, 50%);
-            transform: translate(50%, 50%);
+    -webkit-transform: translate(30%, -50%);
+            transform: translate(30%, -50%);
     width: 6rem;
     outline: none;
     cursor: pointer;
   }
   .login__close :nth-child(1) {
-    -webkit-transform: rotate(45deg) translate(16px, 0px);
-            transform: rotate(45deg) translate(16px, 0px);
+    -webkit-transform: rotate(45deg) translate(15px, 0px);
+            transform: rotate(45deg) translate(15px, 0px);
   }
   .login__close :nth-child(2) {
-    -webkit-transform: rotate(-45deg) translate(16px, 0px);
-            transform: rotate(-45deg) translate(16px, 0px);
+    -webkit-transform: rotate(-45deg) translate(15px, 0px);
+            transform: rotate(-45deg) translate(15px, 0px);
   }
   .login__close div {
     width: 100%;
@@ -430,6 +430,15 @@ body {
     border-radius: 2px;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+  }
+}
+
+@media (max-width: 50em) and (orientation: landscape) {
+  .login__close {
+    left: 20px;
+    top: 60%;
+    -webkit-transform: translate(50%, -50%);
+            transform: translate(50%, -50%);
   }
 }
 
